@@ -1,7 +1,9 @@
 import React from "react";
 import Accordion from "./Accordion";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutCard = () => {
+  const navigate = useNavigate();
   return (
     <div className="border p-4 bg-gray-100">
       <Accordion />
@@ -19,7 +21,12 @@ const CheckoutCard = () => {
         <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
           &larr; CONTINUE SHOPPING
         </button>
-        <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+        <button
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          onClick={() => {
+            navigate("/checkout/checkout");
+          }}
+        >
           CHECKOUT &rarr;
         </button>
       </div>

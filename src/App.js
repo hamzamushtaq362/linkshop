@@ -9,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ShoppingCart from "./components/Cart/ShoppingCart";
 import TopNavBar from "./components/SubNavbar/TopNavBar";
 import SubNavbar from "./components/SubNavbar/SubNavbar";
+import QuickCheckout from "./components/QuickCheckout/QuickCheckout";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
         <Route path="/checkout/cart" element={<ShoppingCart />} />
+        <Route path="/checkout/checkout" element={<QuickCheckout />} />
       </Routes>
       <Footer />
     </Router>
