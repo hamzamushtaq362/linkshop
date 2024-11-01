@@ -45,8 +45,17 @@ function SubNavbar() {
         </div>
 
         {/* All Writers */}
-        <div className="flex items-center space-x-1">
+        <div
+          className="flex items-center space-x-1 cursor-pointer hover:text-red-500"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <FaHome size={18} />
+        </div>
+
+        {/* All Writers */}
+        <div className="flex items-center space-x-1 hover:text-green-500">
           <span className="cursor-pointer text-xs">All Writers</span>
         </div>
 
@@ -70,10 +79,10 @@ function SubNavbar() {
         </div>
 
         {/* View All Books */}
-        <span className="cursor-pointer text-xs">View All Books</span>
+        <span className="cursor-pointer text-xs hover:text-green-500">View All Books</span>
 
         {/* International Shipping Rates */}
-        <span className="cursor-pointer text-xs">
+        <span className="cursor-pointer text-xs hover:text-green-500">
           International Shipping Rates
         </span>
 
@@ -92,13 +101,13 @@ function SubNavbar() {
         </div>
 
         {/* Account */}
-        <div className="flex flex-col items-center space-x-1 cursor-pointer">
+        <div className="flex flex-col items-center space-x-1 cursor-pointer hover:text-green-500">
           <FaUser size={14} />
           <span className="text-xs">Account</span>
         </div>
 
         {/* Wishlist */}
-        <div className="flex flex-col items-center space-x-1 relative cursor-pointer">
+        <div className="flex flex-col items-center space-x-1 relative cursor-pointer hover:text-green-500">
           <FaHeart size={14} />
           <span className="text-xs">Wishlist</span>
           <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
