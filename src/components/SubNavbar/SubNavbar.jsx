@@ -8,10 +8,13 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import DropdownMenu from "./DropdownMenu";
+import { FaCartShopping } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 function SubNavbar() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let timer;
@@ -44,7 +47,7 @@ function SubNavbar() {
         {/* All Writers */}
         <div className="flex items-center space-x-1">
           <FaHome size={18} />
-          <span className="cursor-pointer">All Writers</span>
+          <span className="cursor-pointer text-xs">All Writers</span>
         </div>
 
         {/* Categories - Hover to show dropdown */}
@@ -53,7 +56,9 @@ function SubNavbar() {
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
         >
-          <span className="text-green-400 cursor-pointer">Categories</span>
+          <span className="text-green-400 cursor-pointer text-xs">
+            Categories
+          </span>
           {isDropdownVisible && (
             <div className="absolute left-0 w-screen bg-white shadow-lg mt-2">
               {/* Ensure DropdownMenu takes the full width */}
@@ -65,38 +70,51 @@ function SubNavbar() {
         </div>
 
         {/* View All Books */}
-        <span className="cursor-pointer">View All Books</span>
+        <span className="cursor-pointer text-xs">View All Books</span>
 
         {/* International Shipping Rates */}
-        <span className="cursor-pointer">International Shipping Rates</span>
+        <span className="cursor-pointer text-xs">
+          International Shipping Rates
+        </span>
 
         <div className="flex">
           {/* Deals Offer */}
           <div className="flex items-center space-x-2 bg-orange-500 text-white px-4 py-2 rounded">
-            <FaPercent size={18} />
-            <span>Deals Offer</span>
+            <FaPercent size={14} />
+            <span className="text-xs">Deals Offer</span>
           </div>
 
           {/* Stationery And Toys */}
           <div className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded">
             <FaGift size={18} />
-            <span>Stationery And Toys</span>
+            <span className="text-xs">Stationery And Toys</span>
           </div>
         </div>
 
         {/* Account */}
         <div className="flex flex-col items-center space-x-1 cursor-pointer">
-          <FaUser size={18} />
+          <FaUser size={14} />
           <span className="text-xs">Account</span>
         </div>
 
         {/* Wishlist */}
         <div className="flex flex-col items-center space-x-1 relative cursor-pointer">
-          <FaHeart size={18} />
+          <FaHeart size={14} />
           <span className="text-xs">Wishlist</span>
           <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
             0
           </span>
+        </div>
+
+        {/* Checkout */}
+        <div
+          className="flex items-center space-x-2 bg-green-500 text-white px-4 py-2 rounded cursor-pointer"
+          onClick={() => {
+            navigate("/checkout/cart");
+          }}
+        >
+          <span className="text-xs">Items</span>
+          <FaCartShopping size={18} />
         </div>
       </div>
     </div>

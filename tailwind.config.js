@@ -1,7 +1,20 @@
+const flowbite = require("flowbite-react/tailwind");
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", flowbite.content()],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        playfair: ['"Playfair Display"', "serif"],
+        raleway: ['"Raleway"', "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    // ...
+    flowbite.plugin(),
+    require("daisyui"),
+  ],
 };

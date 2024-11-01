@@ -1,13 +1,20 @@
 import React from "react";
 import { FaSearch, FaRedoAlt, FaEnvelope } from "react-icons/fa";
 import logo from "../../logo.svg";
+import { useNavigate } from "react-router-dom";
 
 function TopNavBar() {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-800 text-white py-2">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 px-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 px-4 cursor-pointer">
         {/* Logo */}
-        <div className="flex items-center">
+        <div
+          className="flex items-center"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <img src={logo} alt="Link Shop Logo" className="h-10 md:h-12" />
           <span className="ml-2 text-xl md:text-2xl font-bold">LINK SHOP</span>
         </div>

@@ -4,7 +4,7 @@ import "swiper/css"; // Import Swiper styles
 
 function MainContent() {
   return (
-    <div className="bg-white p-4 rounded shadow">
+    <div className="bg-white p-4 border-l-2 border-r-2">
       {/* Hero Image Swiper */}
       <Swiper spaceBetween={30} slidesPerView={1} className="mb-8">
         <SwiperSlide>
